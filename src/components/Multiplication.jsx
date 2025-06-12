@@ -14,8 +14,16 @@ const Multiplication = () => {
 
     const readInput = () => {
         console.log(input)
-        let mul = parseInt(input.num1) * parseInt(input.num2)
-        setResult(mul)
+        let n1 = parseInt(input.num1)
+        let n2 = parseInt(input.num2)
+        if (isNaN(n1) || isNaN(n2)) {
+            alert("Please enter a number")
+        }
+        else {
+
+            let mul = parseInt(input.num1) * parseInt(input.num2)
+            setResult(mul)
+        }
     }
 
     const [result, setResult] = useState(0)

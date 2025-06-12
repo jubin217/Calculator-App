@@ -4,36 +4,40 @@ import Navbar from './Navbar'
 const VotingEligibility = () => {
 
 
-    const [input,setInput]=useState(
-        {num:0}
+    const [input, setInput] = useState(
+        { num: 0 }
     )
-    
-    const Inputhandler=(e)=>{
-        setInput({...input,[e.target.name]:e.target.value})
+
+    const Inputhandler = (e) => {
+        setInput({ ...input, [e.target.name]: e.target.value })
     }
 
-    const readInput=()=>{
+    const readInput = () => {
         console.log(input)
-        let res=''
-        if(input.num>=18)
-        {
-            res='You are Eligible to vote'
+        let age = parseInt(input.num)
+        let res = ''
+        if (isNaN(age)) {
+            alert("Please enter a valid number")
         }
-        else
-        {
-            res='You are not Eligible to vote'
+        else {
+            if (age >= 18) {
+                res = 'You are Eligible to vote'
+            }
+            else {
+                res = 'You are not Eligible to vote'
+            }
+            setResult(res)
         }
-        setResult(res)
     }
-    const [result,setResult]=useState()
+    const [result, setResult] = useState()
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div className="container">
                 <div className="row">
                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <div class="card" style={{marginTop:100}}>
+                        <div class="card" style={{ marginTop: 100 }}>
                             <div class="card-body">
                                 <div className="row g-3">
                                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">

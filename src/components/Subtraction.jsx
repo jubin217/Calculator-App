@@ -15,8 +15,15 @@ const Subtraction = () => {
 
   const readInput = () => {
     console.log(input)
-    let difference = parseInt(input.num1) - parseInt(input.num2)
-    setResult(difference)
+    let n1 = parseInt(input.num1)
+    let n2 = parseInt(input.num2)
+    if (isNaN(n1) || isNaN(n2)) {
+      alert("Please enter a number")
+    }
+    else {
+      let difference = n1 - n2
+      setResult(difference)
+    }
   }
   const [result, setResult] = useState(0)
 
